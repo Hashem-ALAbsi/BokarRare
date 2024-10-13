@@ -1,0 +1,54 @@
+﻿@model BokarRare.Models.cls_tbgad
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>cls_tbgad</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.studenty)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.studenty.StuName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StuHW)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StuHW)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MideXame)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MideXame)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FinalXame)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FinalXame)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Etamate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Etamate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.TDagrId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

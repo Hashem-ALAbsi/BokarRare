@@ -1,0 +1,65 @@
+﻿@model IEnumerable<BokarRare.Models.cls_tbgad>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Dagree</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.studenty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StuHW)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MideXame)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FinalXame)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Etamate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.studenty.StuName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StuHW)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MideXame)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinalXame)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Etamate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TDagrId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TDagrId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TDagrId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

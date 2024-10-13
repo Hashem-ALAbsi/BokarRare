@@ -1,0 +1,54 @@
+﻿@model BokarRare.Models.cls_Tectar
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>cls_Tectar</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TechName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TechName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TechPhone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TechPhone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TechAddress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TechAddress)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.curse)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.curse.CurseName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TechSal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TechSal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TechImage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TechImage)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.TechId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

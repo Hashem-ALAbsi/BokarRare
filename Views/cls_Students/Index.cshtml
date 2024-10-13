@@ -1,0 +1,65 @@
+﻿@model IEnumerable<BokarRare.Models.cls_Students>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.curse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechImage)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.curse.CurseId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type.TypeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TechImage)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.StId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.StId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.StId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

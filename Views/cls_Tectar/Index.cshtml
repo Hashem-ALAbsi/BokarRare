@@ -1,0 +1,65 @@
+﻿@model IEnumerable<BokarRare.Models.cls_Tectar>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Techares</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TechName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.curse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechSal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechImage)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TechName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TechPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TechAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.curse.CurseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TechSal)
+            </td>
+            <td>
+                <img src="Images/@item.TechImage" style="width:35px;height:35px">
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TechId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TechId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TechId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
